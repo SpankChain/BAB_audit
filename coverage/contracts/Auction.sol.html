@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Auction.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Auction.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.08% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>57/78</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">51.35% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>38/74</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.57% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>63/86</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">131×</span>
+<span class="cline-any cline-yes">76×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">185×</span>
+<span class="cline-any cline-yes">104×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.4.15;
+import {SafeMath} from './SafeMath.sol';
+import {HumanStandardToken} from './HumanStandardToken.sol';
+&nbsp;
+/*
+    Two phase auction:
+    1. purchase phase 
+        * begins when startAuction() is executed by owner, ends when process bid phase begins
+        * initial and incremental deposits must be equal or greater than the minimum deposit defined at contract deployment
+        * buyers submit deposits on-chain
+        * buyers submit signed bids off-chain (a total bid amount in WEI and a max price per token)
+    2. process bid phase
+        * ends when auction ends
+        * strike price must be set before off-chain signed bids can be processed
+        * when all bids have been processed, owner can call completeSuccessfulAuction to end auction
+        * the auction will fail if success conditions are not met in the time allotted for the auction
+    
+    Auction success conditions (defined at contract deployment) : 
+        * amount raised is between a minimum and maximum WEI amount
+        * tokens sold are between a minimum and maximum number of tokens
+&nbsp;
+    A successful auction occurs when all conditions are satisfied and the owner calls completeSuccessfulAuction() before the auction ends.
+    If an auction fails, buyers can withdraw their deposit and no tokens are distributed - tokens can be returned to the token minting contract by calling returnTokens().
+&nbsp;
+    Withdrawl :
+        * buyers withdraw by calling withdraw()
+            * a successful auction results in :
+                * transfer of remaining deposit to buyer
+                * transfer of sold tokens to buyer
+            * a failed auction provides the buyer with a full deposit withdrawl
+&nbsp;
+    Other contraints set at deployment :
+        * minimum buyer deposit (applied to initial and incemental deposits)
+        * maximum bonus token percentage that can be applied to a bid
+&nbsp;
+    NOTES :
+    * optimized for clarity and simplicity
+    * blocks that represent state transitions include the definitional block
+    * only one category of inequality operands is used
+    * use block number to measure time
+    * two types of auction state transitions - active &amp; passive 
+        * active state transitions triggered by contract owner
+        * passive state transitions define auction phases as the block height increases
+    * inspired by Nick Johnson's auction contract : https://gist.github.com/Arachnid/b9886ef91d5b47c31d2e3c8022eeea27
+    * meant to be instructive yet practical - please improve on this!
+*/
+contract Auction {
+    using SafeMath for uint;
+&nbsp;
+    /*****
+    EVENTS
+    ******/
+    event StartAuctionEvent(address tokenAddress, address weiWallet, address tokenWallet, uint minDepositInWei, uint minWeiToRaise, uint maxWeiToRaise, uint minTokensForSale, uint maxTokensForSale, uint maxTokenBonusPercentage, uint processingPhaseStartBlock, uint auctionEndBlock);
+    event DepositEvent(address indexed buyerAddress, uint depositInWei, uint totalDepositInWei);
+    event SetStrikePriceEvent(uint strikePriceInWei);
+    event ProcessBidEvent(address indexed buyerAddress, uint tokensPurchased, uint purchaseAmountInWei);
+    event AuctionSuccessEvent(uint strikePriceInWei, uint totalTokensSold, uint totalWeiRaised);
+    event WithdrawEvent(address indexed buyerAddress, uint tokensReceived, uint unspentDepositInWei);
+    event CancelAuctionEvent();
+&nbsp;
+    /***********************************
+    VARIABLES SET AT CONTRACT DEPLOYMENT
+    ************************************/
+    // ADDRESSES DEFINED AT DEPLOYMENT
+    address public ownerAddress;
+    address public weiWallet;
+    address public tokenWallet;
+    address public tokenAddress;
+&nbsp;
+    // USE BLOCK NUMBER TO TRANSITION PHASES
+    // NOTE : This is one type of state which represents the passage of time (block number is preferred over timestamp) - consider it "passive". The reliance on passive state guarantees the buyer that once a deposit is made, it can claimed after a predetermined amount of blocks have passed without dependency on the contract owner. This time limit forces the auction owner to take action within a certain amount of time for an auction to be success.
+    uint public processingPhaseStartBlock;
+    uint public auctionEndBlock;
+&nbsp;
+    // GLOBAL AUCTION CONDITIONS
+    uint public minWeiToRaise;
+    uint public maxWeiToRaise;
+    uint public minTokensForSale;
+    uint public maxTokensForSale;
+&nbsp;
+    // AUCTION PHASES
+    uint public depositWindowInBlocks;
+    uint public processingWindowInBlocks;
+&nbsp;
+    // OTHER AUCTION CONSTRAINTS
+    uint public maxTokenBonusPercentage;
+    uint public minDepositInWei;
+&nbsp;
+    /*************************************
+    SET AFTER AUCTION DEPLOYMENT
+    **************************************/
+    uint public strikePriceInWei;
+&nbsp;
+    /******************
+    INTERNAL ACCOUNTING
+    *******************/
+    // ERC-20 BASED TOKEN WITH SOME ADDED PROPERTIES FOR HUMAN READABILITY
+    // https://github.com/ConsenSys/Tokens/blob/master/contracts/HumanStandardToken.sol
+    HumanStandardToken public token;
+&nbsp;
+    // USE ENUM TO REPRESENT STATE UPDATES
+    // NOTE : This is the second type of state - consider it "active", it requires method execution to update. The active state keeps track of owner method execution over the course of the auction putting the onus on the contract owner to interact with the contract for an auction to be successful.
+    enum AuctionState { deployed, started, success, cancel }
+    AuctionState public currentAuctionState = AuctionState.deployed;
+&nbsp;
+    struct Buyer {
+        uint depositInWei;  // running total of buyer's deposit
+        uint bidWeiAmount;  // bid amount in WEI from off-chain signed bid
+        uint totalTokens;   // total amount of tokens to distribute to buyer
+        bool hasWithdrawn;  // bool to check if buyer has withdrawn
+    }
+    mapping(address =&gt; Buyer) public allBuyers; // mapping of address to buyer (Buyer struct)
+    uint public totalTokensSold; // running total of tokens from processed bids
+    uint public totalWeiRaised; // running total of WEI raised from processed bids
+    
+    /********
+    MODIFIERS
+    *********/
+    modifier auction_deployed_waiting_to_start {
+        require(currentAuctionState == AuctionState.deployed);
+        _;
+    }
+&nbsp;
+    modifier in_purchase_phase {
+        require(block.number &lt; processingPhaseStartBlock &amp;&amp; currentAuctionState == AuctionState.started);
+        _;
+    }
+&nbsp;
+    modifier in_processing_phase {
+        require(currentAuctionState == AuctionState.started);
+        require(processingPhaseStartBlock &lt;= block.number);
+        require(block.number &lt; auctionEndBlock);
+        _;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    modifier auction_complet</span>e {
+<span class="cstat-no" title="statement not covered" >        require(auctionEndBlock &lt;= block.number || currentAuctionState == AuctionState.success || currentAuctionState == AuctionState.cancel)</span>;
+        _;
+    }
+&nbsp;
+    modifier strike_price_set {
+        require(0 &lt; strikePriceInWei);
+        _;
+    }
+&nbsp;
+    modifier owner_only {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == ownerAddress);
+        _;
+    }
+    
+    /*******************************************************************************************************
+    * token parameters : 
+        _tokenAddress : token minting contract address
+&nbsp;
+    * wallets :
+        _weiWallet : wallet address to transfer WEI after a successful auction
+        _tokenWallet : wallet address to transfer remaining tokens after a successful auction
+        
+    * deposit constraint :
+        _minDepositInWei : minimum deposit accepted in WEI (for an initial or incremental deposit)
+&nbsp;
+    * auction constraints :
+        a successful auction will raise at least the minimum and at most the maximum number of WEI 
+        _minWeiToRaise : minimum WEI to raise for a successful auction
+        _maxWeiToRaise : maximum WEI to raise for a successful auction
+&nbsp;
+        a successful auction will sell at least the minimum and at most the maximum number of tokens
+        _minTokensForSale : minimum tokens to sell for a successful auction
+        _maxTokensForSale : maximum tokens to sell for a successful auction
+    
+    * bonus precentage cap :
+        _maxTokenBonusPercentage : maximum token percentage bonus that can be applied when processing bids
+    
+    * auction phase constraints :
+        _depositWindowInBlocks : defines the length, in blocks, of the purchase phase
+        _processingWindowInBlocks : defines the length, in blocks, of the processing phase
+    ******************************************************************************************************/
+    function Auction(
+        address _tokenAddress, address _weiWallet, address _tokenWallet, uint _minDepositInWei, uint _minWeiToRaise, uint _maxWeiToRaise, uint _minTokensForSale, uint _maxTokensForSale, uint _maxTokenBonusPercentage, uint _depositWindowInBlocks, uint _processingWindowInBlocks) {
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(0 &lt; _minDepositInWei);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_minDepositInWei &lt;= _minWeiToRaise);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_minWeiToRaise &lt; _maxWeiToRaise);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(0 &lt; _minTokensForSale);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_minTokensForSale &lt; _maxTokensForSale);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(0 &lt; _depositWindowInBlocks);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(0 &lt; _processingWindowInBlocks);
+&nbsp;
+        ownerAddress = msg.sender;
+        tokenAddress = _tokenAddress;
+        
+        weiWallet = _weiWallet;
+        tokenWallet = _tokenWallet;
+&nbsp;
+        minDepositInWei = _minDepositInWei;
+        minWeiToRaise = _minWeiToRaise;
+        maxWeiToRaise = _maxWeiToRaise;
+        minTokensForSale = _minTokensForSale;
+        maxTokensForSale = _maxTokensForSale;
+        maxTokenBonusPercentage = _maxTokenBonusPercentage;
+&nbsp;
+        depositWindowInBlocks = _depositWindowInBlocks;
+        processingWindowInBlocks = _processingWindowInBlocks;
+    }
+&nbsp;
+    /**************
+    BUYER FUNCTIONS
+    ***************/
+    // buyers can deposit as many time as they want during the purchase phase
+    function deposit() in_purchase_phase payable {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(minDepositInWei &lt;= msg.value);
+        
+        Buyer storage buyer = allBuyers[msg.sender];
+		buyer.depositInWei = SafeMath.add(buyer.depositInWei, msg.value);
+&nbsp;
+        DepositEvent(msg.sender, msg.value, buyer.depositInWei);
+    }
+&nbsp;
+    // buyers can succefully withdraw once the auction is over
+    // - if the auction ends and all conditions have been met, the auction was successful
+    // - if the auction ends and any condition has not been met, the auction has failed
+    // successful auction : buyers can withdraw tokens and remaining deposit
+    // failed auction : buyers can only withdraw their deposit
+<span class="fstat-no" title="function not covered" >    function withdraw() auction_complet</span>e {
+<span class="cstat-no" title="statement not covered" >        Buyer storage buyer = allBuyers[msg.sender]</span>;
+<span class="cstat-no" title="statement not covered" >        require(buyer.hasWithdrawn == false)</span>;
+        
+<span class="cstat-no" title="statement not covered" >        buyer.hasWithdrawn = true</span>;
+<span class="cstat-no" title="statement not covered" >        require(minDepositInWei &lt;= buyer.depositInWei)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (currentAuctionState == AuctionState.success) {</span>
+<span class="cstat-no" title="statement not covered" >            require(token.transfer(msg.sender, buyer.totalTokens))</span>;
+            msg.sender.transfer(SafeMath.sub(buyer.depositInWei, buyer.bidWeiAmount));
+            
+<span class="cstat-no" title="statement not covered" >            WithdrawEvent(msg.sender, buyer.totalTokens, SafeMath.sub(buyer.depositInWei, buyer.bidWeiAmount))</span>;
+        } else {
+            msg.sender.transfer(buyer.depositInWei);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            WithdrawEvent(msg.sender, 0, buyer.depositInWei)</span>;
+        }
+    }
+&nbsp;
+    /*******************
+    OWNER ONLY FUNCTIONS
+    ********************/
+    // ASSUMPTION : transfer of max tokens for sale happens after contract deployment but before startAuction() is called
+    // startAuction() can only be called once
+    // purchase phase begins once startAuction is successfully called
+    function startAuction() auction_deployed_waiting_to_start owner_only {
+        token = HumanStandardToken(tokenAddress);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(token.balanceOf(this) == maxTokensForSale);
+        
+        processingPhaseStartBlock = block.number + depositWindowInBlocks;
+        auctionEndBlock = processingPhaseStartBlock + processingWindowInBlocks;
+        currentAuctionState = AuctionState.started;
+&nbsp;
+        StartAuctionEvent(tokenAddress, weiWallet, tokenWallet, minDepositInWei, minWeiToRaise, maxWeiToRaise, minTokensForSale, maxTokensForSale, maxTokenBonusPercentage, processingPhaseStartBlock, auctionEndBlock);
+    }
+&nbsp;
+    // the strike price can only be set during the bid processing phase
+    // the strike price must be greater than zero
+    // the strike price can only be set once
+    function setStrikePrice(uint _strikePriceInWei) in_processing_phase owner_only {
+        require(strikePriceInWei == 0);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(0 &lt; _strikePriceInWei);
+        
+        strikePriceInWei = _strikePriceInWei;
+&nbsp;
+        SetStrikePriceEvent(strikePriceInWei);
+    }
+&nbsp;
+    // off-chain bidding :
+    // - signed off-chain bids are submitted during the deposit phase
+    // - a bid states a token price in WEI and a total bid amount in WEI
+    // - owner processes signed off-chain bids
+    // the bid processing phase begins as soon as the deposit phase ends
+    // a strike price must be set before bids can be processed
+    // a bid must be greater than minimum deposit requirement
+    // a bid must be equal or greater than the strike price
+    // the total bid amount must be equal or greater than the bid's token price
+    // a buyer address can only be associated with the first successful processed bid
+    // signature verification is used to determine the buyer address
+    // after a bid is successfully processed, the total WEI to collect and total tokens to sell are updated
+    // check the total funds raised and number of tokens sold are equal or below the maximum auction success conditions
+    function processBid(uint tokenBidPriceInWei, uint bidWeiAmount, uint tokenBonusPercentage, uint8 v, bytes32 r, bytes32 s) strike_price_set in_processing_phase owner_only {
+        require(minDepositInWei &lt;= bidWeiAmount);
+        require(strikePriceInWei &lt;= tokenBidPriceInWei);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(tokenBidPriceInWei &lt;= bidWeiAmount);
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(0 &lt;= tokenBonusPercentage);
+        require(tokenBonusPercentage &lt;= maxTokenBonusPercentage);
+&nbsp;
+        // NON EIP-712
+        bytes32 bidHash = sha3(this, tokenBidPriceInWei, bidWeiAmount);
+        
+        // EIP-712
+        // bytes32 bidHash = keccak256(
+        //     keccak256("address contractAddress", "uint tokenBidPriceInWei", "uint bidWeiAmount"),
+        //     keccak256(this, tokenBidPriceInWei, bidWeiAmount));
+&nbsp;
+        address buyerAddress = ecrecover(bidHash, v, r, s);
+&nbsp;
+        uint numTokensPurchased = SafeMath.div(bidWeiAmount, strikePriceInWei);
+        uint numBonusTokens = SafeMath.div( SafeMath.mul(tokenBonusPercentage, numTokensPurchased), 100 );
+        uint numTotalTokensForBid = SafeMath.add(numTokensPurchased, numBonusTokens);
+        require(SafeMath.add(numTotalTokensForBid, totalTokensSold) &lt;= maxTokensForSale);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(SafeMath.add(totalWeiRaised, bidWeiAmount) &lt;= maxWeiToRaise);
+&nbsp;
+        Buyer storage buyer = allBuyers[buyerAddress];
+        <span class="missing-if-branch" title="if path not taken" >I</span>require(bidWeiAmount &lt;= buyer.depositInWei);
+<span class="cstat-no" title="statement not covered" >        require(buyer.bidWeiAmount == 0)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        buyer.totalTokens = numTotalTokensForBid</span>;
+<span class="cstat-no" title="statement not covered" >        buyer.bidWeiAmount = bidWeiAmount</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        totalTokensSold = SafeMath.add(buyer.totalTokens, totalTokensSold)</span>;
+<span class="cstat-no" title="statement not covered" >        totalWeiRaised = SafeMath.add(buyer.bidWeiAmount, totalWeiRaised)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        ProcessBidEvent(buyerAddress, buyer.totalTokens, buyer.bidWeiAmount)</span>;
+    }
+&nbsp;
+    // called after bids have been processed to end auction
+    // must be called in order for an auction to be successful
+    // checks to see that the contract has enough tokens to sell
+    // checks to see that auction conditions have been met
+    // if all conditions are meet, auction state transitions to success
+<span class="fstat-no" title="function not covered" >    function completeSuccessfulAuction() strike_price_set in_processing_phase owner_onl</span>y {
+<span class="cstat-no" title="statement not covered" >        require(totalTokensSold &lt;= token.balanceOf(this))</span>;
+<span class="cstat-no" title="statement not covered" >        require(minTokensForSale &lt;= totalTokensSold)</span>; // maxTokensForSale check done in processBid
+<span class="cstat-no" title="statement not covered" >        require(minWeiToRaise &lt;= totalWeiRaised)</span>; // maxWeiToRaise check done in processBid
+<span class="cstat-no" title="statement not covered" >        require(token.transfer(tokenWallet, SafeMath.sub( token.balanceOf(this), totalTokensSold )))</span>;
+        
+        weiWallet.transfer(totalWeiRaised);
+<span class="cstat-no" title="statement not covered" >        currentAuctionState = AuctionState.success</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        AuctionSuccessEvent(strikePriceInWei, totalTokensSold, totalWeiRaised)</span>;
+    }
+&nbsp;
+    // can only be successfully called by owner if the auction is cancellable
+    // causes auction to fail
+    function cancelAuction() owner_only {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(currentAuctionState != AuctionState.success);
+        
+        token.transfer(tokenWallet, token.balanceOf(this));
+        currentAuctionState = AuctionState.cancel;
+        
+        CancelAuctionEvent();
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Oct 16 2017 23:31:08 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
