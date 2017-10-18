@@ -89,7 +89,7 @@
 ###### Function Description:
   - Requires that the auction state to not be "success"
   - Tranfers the ERC tokens back to the wallet corresponding to the auctions
-  - Sets the auction stage to be "cancel'
+  - Sets the auction stage to be "cancel"
 
 ### Bidder Functions
 ##### `deposit`
