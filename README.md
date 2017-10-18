@@ -3,7 +3,7 @@
 ## Blockchain at Berkeley
 
 
-Blockchain at Berkeley team conducted a security audit of [Spankchain's auction contract](https://github.com/SpankChain/sc_auction). The current report is a the final version (October 17, 2017).
+The Blockchain at Berkeley team conducted a security audit of [Spankchain's auction contract](https://github.com/SpankChain/sc_auction). The current report is the final version (October 17, 2017).
 
 ## Contents
 
