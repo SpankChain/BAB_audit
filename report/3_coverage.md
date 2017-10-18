@@ -2,12 +2,12 @@
 
 Code coverage using the [Solidity-Coverage](https://github.com/sc-forks/solidity-coverage) tool was used to measure the what portions of the codebase was run with the given test suite. 
 
-A preview of the test coverage results can be viewed in the image below and the full test coverage results can be viewed by opening the index.html file located in the code coverage directory:
-
-Coverage Results
-![alt-text](https://github.com/raychu86/SpankchainAudit/blob/master/coverage/coverage.png)
+A preview of the test coverage results can be viewed in the image below and the full test coverage results can be viewed by opening the `index.html` file located in the code coverage directory.
 
 [Report Directory](../coverage)
+
+__Coverage Results__
+![alt-text](https://github.com/raychu86/SpankchainAudit/blob/master/coverage/coverage.png)
 
 ## Oyente Report 
 
@@ -38,4 +38,4 @@ minDepositInWei = 82306579331706070424569484146079930342289088062704051215418675
 processingPhaseStartBlock = 1
 ```
 
-It is highly unlikely this assertion failure will be reached since it would require an obscene amount of wei in the form of a deposit. 
+It is highly unlikely this assertion failure will be reached as it requires an obscene amount of wei in the form of a deposit. 
