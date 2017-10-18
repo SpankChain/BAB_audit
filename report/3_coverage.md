@@ -2,7 +2,7 @@
 
 Code coverage using the [Solidity-Coverage](https://github.com/sc-forks/solidity-coverage) tool was used to measure the what portions of the codebase was run with the given test suite. 
 
-The test coverage results are located in the code coverage directory and can be viewed by opening the `index.html` file or by observing the image below:
+A preview of the test coverage results can be viewed in the image below and the full test coverage results can be viewed by opening the index.html file located in the code coverage directory:
 
 Coverage Results
 ![alt-text](https://github.com/raychu86/SpankchainAudit/blob/master/coverage/coverage.png)
