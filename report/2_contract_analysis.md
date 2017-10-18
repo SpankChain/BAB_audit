@@ -2,7 +2,6 @@
 
 ## General Findings
 
-##### `Code`
 - Reentrancy bug exploitable by the contract owner.
 - Many typos and capitalization issues.
 - Documentation is better suited as a Markdown file.
