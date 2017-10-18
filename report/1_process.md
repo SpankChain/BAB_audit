@@ -3,10 +3,11 @@
 
 ## The Process
 
-The Blockchain at Berkeley team was contracted the audit by the Spankchain team on October 11th, 2017. The audit was submitted to the team on October 17th, 2017.
+The Blockchain at Berkeley team was contracted the audit by the Spankchain team on October 11th, 2017. The audit was submitted to the team on October 18th, 2017.
 
 The review process was broken up into an individual pass by each member of the audit team, followed by a pass by all members involved with the audit.
 
+An initial draft was completed on October 15, 2017 and was finalized on October 18, 2017.
 
 ## The Scope
 
