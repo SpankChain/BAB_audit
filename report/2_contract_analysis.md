@@ -3,7 +3,7 @@
 ## General Findings
 
 ##### `Code`
-- Reentrancy bug to be exploited by the Spankchain team.
+- Reentrancy bug exploitable by the contract owner.
 - Many typos and capitalization issues.
 - Documentation is better suited as a Markdown file.
 - Enums are typically first-letter-capitalized by convention.
