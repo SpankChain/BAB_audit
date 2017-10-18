@@ -19,7 +19,7 @@ Identification of potential security flaws/attacks including but not limited to:
 * Front running and transaction-ordering dependence
 * Call depth attacks
 * Data compliance
-* Integer Overflow and Underflow
+* Integer overflows and underflows
 * Race conditions
 * DoS attacks
 * Timestamp dependence
