@@ -2,7 +2,7 @@
 
 ## General Findings
 
-- Rentrancy bug to be exploited by the Spankchain team.
+- Reentrancy bug to be exploited by the Spankchain team.
 - Many typos and capitalization issues.
 - Documentation might be better suited as a markdown file .
 - Enums are typically first-letter-capitalized by convention.
