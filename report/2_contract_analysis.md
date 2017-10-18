@@ -2,15 +2,16 @@
 
 ## General Findings
 
+##### `Code`
 - Reentrancy bug to be exploited by the Spankchain team.
 - Many typos and capitalization issues.
-- Documentation might be better suited as a markdown file .
+- Documentation is better suited as a Markdown file.
 - Enums are typically first-letter-capitalized by convention.
-- Run code through style-guide. Don’t make comments/code longer than 80 characters per line.
 - Modifiers are generally named with lowerCamelCase.
-- Be consistent with variable naming conventions. 
+- Be consistent with variable naming conventions.
 - Prefer `x > 0` to `0 < x` for code readability.
 - Ensure that variable placement about logical operators is consistent, ie. a < b; a != c.
+- Run code through style-guide. Don’t make comments/code longer than 80 characters per line.
 - Better practice to set the auction state to deployed in the constructor rather than next to variable declarations.
 - Question: Why is the token instantiated in `startAuction` instead of when the token address is supplied to the contract?
 
