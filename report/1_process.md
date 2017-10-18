@@ -36,7 +36,7 @@ Focal Points:
 * Scalability
 
 ### Architecture
-Reivew of the smart contract architecture with primary focus on:
+Review of the smart contract architecture with primary focus on:
 * Game theory
 * Incentives
 * Pain Points
