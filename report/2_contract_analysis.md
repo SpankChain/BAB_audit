@@ -78,7 +78,7 @@
 ###### Function Descriptions:
   - Requires that the number of tokens sold is less than the number of tokens allotted to the auction contract
   - Requires that the minimum number of tokens sold has reached the defined amount
-  - Requries the amount of wei raised has reached thee defined amount
+  - Requires the amount of wei raised has reached thee defined amount
   - Tranfers all unsold tokens to the wallet corresponding to the auction
   - Tranfers ether to the wallet corresponding to the auction
   - Sets the auction stage to be "success"
